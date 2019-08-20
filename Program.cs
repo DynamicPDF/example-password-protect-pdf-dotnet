@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace example_password_protect_pdf_dotnet
 {
-    // This example shows how to create a PDF with passwrd protection and password protect an existing PDF.
+    // This example shows how to create a PDF with password protection and password protect an existing PDF.
     // It references the ceTe.DynamicPDF.CoreSuite.NET NuGet package.
     class Program
     {
@@ -19,8 +19,8 @@ namespace example_password_protect_pdf_dotnet
 
         // Create a password protected PDF from scratch.
         // This code uses DynamicPDF Generator for .NET product.
-        // Import the ceTe.DynamicPDF namespace for the Document and Page classes.
-        // Import the ceTe.DynamicPDF.Cryptography namespace for the Aes256Security class.
+        // Use the ceTe.DynamicPDF namespace for the Document and Page classes.
+        // Use the ceTe.DynamicPDF.Cryptography namespace for the Aes256Security class.
         private static void PasswordProtectNewPDF()
         {
             //Create a Document object
@@ -34,12 +34,12 @@ namespace example_password_protect_pdf_dotnet
             Aes256Security security = new Aes256Security("owner", "user");
             document.Security = security;
 
-            document.Draw("output.pdf");
+            document.Draw("output-new-pdf.pdf");
         }
 
         // Add password protection for an existing PDF.
         // This code uses DynamicPDF Merger for .NET product.
-        // Import the ceTe.DynamicPDF.Merger namespace for the MergeDocument class.
+        // Use the ceTe.DynamicPDF.Merger namespace for the MergeDocument class.
         private static void AddPasswordToExistingPDF()
         {
             //Create PdfDocument object with the existing PDF file and create MergeDocument using PdfDocument
@@ -51,7 +51,7 @@ namespace example_password_protect_pdf_dotnet
             document.Security = security;
 
             //Save the Document
-            document.Draw("outputFromExistingFile.pdf");
+            document.Draw("output-existing-pdf.pdf");
         }
 
         // This is a helper function to get the full path to a file in the Resources folder.
